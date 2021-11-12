@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>dalton.budget</groupId>
+    <artifactId>budget-parent</artifactId>
+    <version>1.0.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
+    <name>Budget Parent POM</name>
+
+    <properties>
+        <!-- standard configuration properties -->
+        <project.jdk.version>11</project.jdk.version>
+        <project.java.source>11</project.java.source>
+        <project.java.target>11</project.java.target>
+        <maven.compiler.source>11</maven.compiler.source>
+        <maven.compiler.target>11</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <!-- dependencies/plugin versions -->
+        <budget.version>1.0.0-SNAPSHOT</budget.version>
+        <lombok.version>1.18.22</lombok.version>
+        <querydsl-maven-plugin.version>4.2.1</querydsl-maven-plugin.version>
+        <spring-boot-dependencies.version>2.5.6</spring-boot-dependencies.version>
+    </properties>
+
+    <scm>
+        <url>https://github.com/wcdalton/budget</url>
+    </scm>
+
+    <modules>
+        <module>budget-model</module>
+        <module>budget-local</module>
+        <module>budget-rest</module>
+        <module>budget-starter</module>
+        <module>budget-boot</module>
+    </modules>
+
+    <build>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>com.querydsl</groupId>
+                    <artifactId>querydsl-maven-plugin</artifactId>
+                    <version>4.2.1</version>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+    </build>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-dependencies</artifactId>
+                <version>${spring-boot-dependencies.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.projectlombok</groupId>
+                <artifactId>lombok</artifactId>
+                <version>${lombok.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>dalton.budget</groupId>
+                <artifactId>budget-model</artifactId>
+                <version>${budget.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>dalton.budget</groupId>
+                <artifactId>budget-local</artifactId>
+                <version>${budget.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>dalton.budget</groupId>
+                <artifactId>budget-rest</artifactId>
+                <version>${budget.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>dalton.budget</groupId>
+                <artifactId>budget-starter</artifactId>
+                <version>${budget.version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+</project>
+
