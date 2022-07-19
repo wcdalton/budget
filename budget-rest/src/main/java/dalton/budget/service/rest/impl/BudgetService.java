@@ -6,7 +6,6 @@ import dalton.budget.service.rest.api.IBudgetService;
 import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.server.ResponseStatusException;
@@ -18,7 +17,6 @@ public class BudgetService implements IBudgetService {
     private static final Logger log = LoggerFactory.getLogger(BudgetService.class);
     private final IBudgetLocal budgetLocal;
 
-    @Autowired
     public BudgetService(IBudgetLocal budgetLocal) {
         this.budgetLocal = budgetLocal;
     }

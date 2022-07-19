@@ -72,11 +72,11 @@ public class BudgetLocalTest {
         when(mockRepository.findById(any(String.class))).thenReturn(Optional.empty());
         when(mockRepository.findAll(any(Predicate.class))).thenReturn(Collections.emptyList());
         BudgetLocal local = new BudgetLocal(mockRepository);
-        BudgetDoesNotExist thrown = assertThrows(BudgetDoesNotExist.class,
-                () -> local.update(Budget.builder().id("someId").year(2021).month(11).build()));
         LocalDate now = LocalDate.now();
+        BudgetDoesNotExist thrown = assertThrows(BudgetDoesNotExist.class,
+                () -> local.update(Budget.builder().id("someId").year(now.getYear()).month(now.getMonthValue()).build()));
         String date = DateTimeFormatter.ofPattern("MM/uuuu").format(now);
-        assertEquals(String.format("Budget does not exist for %s", date), thrown.getMessage());
+        assertEquals(thrown.getMessage(), String.format("Budget does not exist for %s", date));
     }
 
     @Test

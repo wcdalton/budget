@@ -10,11 +10,11 @@
 
     <properties>
         <!-- standard configuration properties -->
-        <project.jdk.version>11</project.jdk.version>
-        <project.java.source>11</project.java.source>
-        <project.java.target>11</project.java.target>
-        <maven.compiler.source>11</maven.compiler.source>
-        <maven.compiler.target>11</maven.compiler.target>
+        <project.jdk.version>14</project.jdk.version>
+        <project.java.source>14</project.java.source>
+        <project.java.target>14</project.java.target>
+        <maven.compiler.source>14</maven.compiler.source>
+        <maven.compiler.target>14</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <!-- dependencies/plugin versions -->

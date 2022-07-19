@@ -2,11 +2,9 @@ package dalton.budget.model.entity;
 
 import com.google.gson.Gson;
 import lombok.*;
-import org.springframework.data.annotation.CreatedDate;
 
 import javax.persistence.*;
 import java.io.Serializable;
-import java.time.Instant;
 import java.time.LocalDate;
 import java.util.Objects;
 
