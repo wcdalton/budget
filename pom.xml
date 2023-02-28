@@ -20,8 +20,8 @@
         <!-- dependencies/plugin versions -->
         <budget.version>1.0.0-SNAPSHOT</budget.version>
         <lombok.version>1.18.22</lombok.version>
-        <querydsl-maven-plugin.version>4.2.1</querydsl-maven-plugin.version>
-        <spring-boot-dependencies.version>2.5.6</spring-boot-dependencies.version>
+        <querydsl-maven-plugin.version>5.0.0</querydsl-maven-plugin.version>
+        <spring-boot-dependencies.version>2.7.9</spring-boot-dependencies.version>
     </properties>
 
     <scm>
